@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
+
 {% block content %}
 <h1>Hello {{ name }}!</h1>
-<p>    
-    <img src="{{ url_for('static', filename='download.jpg') }}">
-    Profissão: {{ data.profissão }}<br/>
-    Canal YT: {{ data.canal }}<br/>
+<p>
+    <img class="imgquadrada" src="{{ url_for('static', filename='img/download.jpg') }}"> <br/>    
+</p>
+<p>
+    Profissão: {{ data.profission }} <br/>
+    Canal YT: {{ data.channel }} <br/>
 </p>
 {% endblock %}

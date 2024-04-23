@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
 </head>
 
 <body>
     <nav>
         <a href="/index">Página Inicial</a>
         <a href="/contato">Contato</a>
+        <a href="/login">Login</a>
     </nav>
 
     {% block content %}

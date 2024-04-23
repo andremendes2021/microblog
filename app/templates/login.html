@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/autenticar">
+        Usuário: <input type="text" name="user"><br/>
+        Senha: <input type="text" name="pwd"><br/>
+        <button type="submit">Entrar</button>
+    </form>
+{% endblock %}
