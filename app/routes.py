@@ -1,4 +1,4 @@
-from flask import render_template, url_for, request
+from flask import render_template, request, flash, redirect
 from app import app
 
 @app.route('/')
@@ -20,9 +20,12 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/autenticar', methods=['GET'])
+@app.route('/autenticar', methods=['POST'])
 def autenticar():
-    usuario = request.args.get('user')
-    senha = request.args.get('pwd')
-
-    return "usuario: {} e senha: {}".format(usuario, senha)
+    usuario = request.form.get('user')
+    senha = request.form.get('pwd')
+    if usuario == 'admin' and senha == 'senha123':
+        return "usuario: {} e senha: {}".format(usuario, senha)
+    else:
+        flash("Dados inválidos.")
+        return redirect('/login')
